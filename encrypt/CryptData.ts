@@ -50,8 +50,8 @@ export class CryptoDecryptor {
 
   private static getAuthTagAndCipherText(encryptedPayload: string) {
     const fullPayload = Buffer.from(encryptedPayload, "base64");
-    const ciphertext = fullPayload.slice(0, -16);
-    const authTag = fullPayload.slice(-16);
+    const ciphertext = fullPayload.subarray(0, -16);
+    const authTag = fullPayload.subarray(-16);
     return {ciphertext, authTag}
   }
 }
