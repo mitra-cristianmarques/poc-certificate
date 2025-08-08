@@ -3,14 +3,7 @@ import { Buffer } from "buffer";
 import { privateKey } from "./PrivateKey";
 
 export class CryptoDecryptor {
-  /**
-   * Decrypts AES-GCM encrypted data using RSA-OAEP decrypted AES key.
-   * @param {string} encryptedKey - Base64 RSA-encrypted AES key
-   * @param {string} encryptedPayload - Base64 AES-GCM encrypted payload (ciphertext + authTag)
-   * @param {string} ivBase64 - Base64 IV (must be 12 bytes)
-   * @param {string} privateKey - PEM-formatted RSA private key
-   * @returns {string} - Decrypted plaintext
-   */
+  
   static async decrypt(
     encryptedKey: string,
     encryptedPayload: string,
