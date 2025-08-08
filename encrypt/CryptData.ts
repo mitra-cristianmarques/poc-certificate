@@ -1,8 +1,8 @@
 import crypto from "react-native-quick-crypto";
 import { Buffer } from "buffer";
+import { privateKey } from "./PrivateKey";
 
 export class CryptoDecryptor {
-  private static privateKey = ``;
   /**
    * Decrypts AES-GCM encrypted data using RSA-OAEP decrypted AES key.
    * @param {string} encryptedKey - Base64 RSA-encrypted AES key
@@ -40,7 +40,7 @@ export class CryptoDecryptor {
   private static decryptRSAKey(key: string) {
     return crypto.privateDecrypt(
       {
-        key: this.privateKey,
+        key: privateKey,
         padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
         oaepHash: "sha256",
       },
